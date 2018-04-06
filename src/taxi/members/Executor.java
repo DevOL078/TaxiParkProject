@@ -1,4 +1,4 @@
-package taxi;
+package taxi.members;
 
 import java.io.File;
 import java.io.FileWriter;

@@ -1,4 +1,4 @@
-package taxi;
+package taxi.members;
 
 import java.util.HashMap;
 import java.util.regex.Matcher;
@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 import java.io.File;
 
 //Используется паттерн проектирования Singleton
-class Dispatcher {
+public class Dispatcher {
 
     private static Dispatcher dispatcher = new Dispatcher();
     private HashMap<Integer, AbstractExecutor> executors  = new HashMap<>();
@@ -28,11 +28,11 @@ class Dispatcher {
         return dispatcher;
     }
 
-    void addExecutor(AbstractExecutor newExecutor){
+    public void addExecutor(AbstractExecutor newExecutor){
         executors.put(newExecutor.getId(), newExecutor);
     }
 
-    void receiveMessage(String message, int clientID){
+    public void receiveMessage(String message, int clientID){
         if(checkMessage(message)){
             int executorId;
             executorId = getExecutorId(message);
